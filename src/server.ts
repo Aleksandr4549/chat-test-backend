@@ -13,6 +13,8 @@ import './core/db/db';
 const app = express();
 
 app.use(cors());
+//@ts-ignore
+app.options('*', cors());
 app.use(express.json());
 
 messageRoute(app);
