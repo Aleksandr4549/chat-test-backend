@@ -1,6 +1,7 @@
 import dotenv from 'dotenv';
 import express from 'express';
 import path from 'path';
+import cors from 'cors';
 
 import messageRoute from './routes/message-route';
 import userRoute from './routes/user-route';
@@ -11,6 +12,7 @@ import './core/db/db';
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 
 messageRoute(app);
